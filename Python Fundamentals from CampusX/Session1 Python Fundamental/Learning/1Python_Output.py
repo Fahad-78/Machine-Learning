@@ -1,0 +1,11 @@
+#Python is a case sensative language
+print("Hallo World")
+print('Md.Fahad Sarker')
+print(7)
+print(7.5)
+print('Hello',5,7.8,True)
+print('Fahad',4,5.6,False,sep='/')
+print('Hello')
+print('World')
+print('Hello',end='-')
+print('World')
