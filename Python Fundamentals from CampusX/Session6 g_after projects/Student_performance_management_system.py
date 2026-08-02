@@ -15,14 +15,18 @@ for i in range(num):
 
     all_student.append(stu_data)
 
-search = input("Enter roll no for details: ")
+def average(student):
+    return (student["math"] + student["physics"] + student["chemistry"]) / 3
+
+search = input("\nEnter roll no for details: ")
 
 found = False
 for student in all_student:
     if student["roll"] == search:
-        average = ((student["math"]+student["physics"]+student["chemistry"])/3)
-        print(student)
-        print(average)
+        print("\nname:", student["name"])
+        print("roll:", student["roll"])
+        avg = average(student)
+        print("Average:", avg)
         found = True
 if found == False:
     print("Can't find any details")
