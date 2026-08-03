@@ -10,11 +10,12 @@ class Atm:
     def menu(self):
         user_input = input("""
         Hi how can I help you?
-        1. press 1 to create pin
-        2. press 2 to change pin
-        3. press 3 to check balance
-        4. press 4 to withdraw
-        5. Anything else to exit
+
+        press 1 to create pin
+        press 2 to change pin
+        press 3 to check balance
+        press 4 to withdraw
+        Anything else to exit
         """)
 
         if user_input == '1':
