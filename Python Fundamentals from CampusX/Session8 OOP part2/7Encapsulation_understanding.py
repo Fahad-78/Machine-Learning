@@ -7,6 +7,15 @@ class Atm:
         self.__balance = 0
         self.menu()
 
+    def get_balance(self):
+        return self.__balance
+
+    def set_balance(self, new_value):
+        if type(new_value) == int:
+            self.__balance = new_value
+        else:
+            print('Use any number please')
+
     def menu(self):
         user_input = input("""
         Hi how can I help you?
@@ -82,3 +91,7 @@ class Atm:
 obj = Atm()
 obj._Atm__balance = 'hehehehe' #Nothing is truly hidden in python, because python is made for adults not kids
 obj.withdraw()
+
+# We can change or see the balance even if it is set to private variable by this two functions
+obj.set_balance(15000)
+obj.get_balance()
