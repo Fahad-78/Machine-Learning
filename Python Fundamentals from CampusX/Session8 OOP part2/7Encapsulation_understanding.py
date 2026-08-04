@@ -4,7 +4,7 @@ class Atm:
     #constractor (special function)
     def __init__(self):
         self.pin = ''
-        self.balance = 0
+        self.__balance = 0
         self.menu()
 
     def menu(self):
@@ -26,7 +26,7 @@ class Atm:
             self.change_pin()
         elif user_input == '3':
             #check balance
-            self.check_balance()
+            self.check__balance()
         elif user_input == '4':
             #withdraw balance
             self.withdraw()
@@ -39,9 +39,9 @@ class Atm:
         self.pin = user_pin
 
         user_balance = int(input("Enter your current balance for verify:"))
-        self.balance = user_balance
+        self.__balance = user_balance
         print("Your new pin created successfully.")
-        self.menu()
+        #self.menu()
 
     def change_pin(self):
         prev_pin = int(input("Enter existing pin:"))
@@ -49,34 +49,36 @@ class Atm:
             new_pin = int(input("Enter new pin:"))
             self.pin = new_pin
             print("Pin successfully changed.")
-            self.menu()
+            #self.menu()
         else:
             print("Existing pin invalid.")
-            self.menu()
+            #self.menu()
     def check_balance(self):
         user_pin = int(input("Enter your pin:"))
         if(self.pin == user_pin):
-            print("Your balance is:",self.balance)
-            self.menu()
+            print("Your balance is:",self.__balance)
+            #self.menu()
         else:
             print("Invalid pin. Try again please.")
-            self.menu()
+            #self.menu()
 
     def withdraw(self):
         user_pin = int(input("Enter your pin:"))
         if self.pin == user_pin:
             amount = int(input("Enter amount: "))
-            if amount<self.balance:
-                new_amount = self.balance - amount
-                self.balance = new_amount
+            if amount<self.__balance:
+                new_amount = self.__balance - amount
+                self.__balance = new_amount
                 print("Withdraw successful.")
-                self.menu()
+                #self.menu()
             else:
                 print("Invalid amount.")
-                self.menu()
+                #self.menu()
 
         else:
             print("Invalid pin. Try again please.")
-            self.menu()
+            #self.menu()
 
 obj = Atm()
+obj._Atm__balance = 'hehehehe' #Nothing is truly hidden in python, because python is made for adults not kids
+obj.withdraw()
