@@ -48,6 +48,4 @@ cust.print_info()
 
 cust.edit_profile('Rahat','Gazipur',1222,'Ireland')
 cust.print_info()
-#method
-#
 
